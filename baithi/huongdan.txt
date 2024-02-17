@@ -1,0 +1,11 @@
+Zalo: 0985196683
+1. Cài json-server
+  - Cài môi trường nodejs
+  - Cài json-server: npm install json-server
+  - Tạo file db.json trong thư mục cài đặt json-server.
+2. Khởi động json-server
+  Lệnh khởi động: npx json-server db.json
+
+
+Link bootstrap:
+https://getbootstrap.com/docs/5.0/getting-started/introduction/

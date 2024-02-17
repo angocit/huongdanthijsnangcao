@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action = "#" onsubmit="updateProduct()">
+        <input type="text" name="id" placeholder="id sản phẩm"><br>
+        <input type="text" name="tensanpham" placeholder="Tên sản phẩm"><br>
+        <input type="text" name="anhsanpham" placeholder="Ảnh sản phẩm"><br>
+        <label>Danh mục</label> <br>
+        <select name="danhmuc">
+            <option value="1">Áo</option>
+            <option value="2">Quần</option>
+            <option value="3">Giày</option>
+        </select><br>
+        <input type="number" name="giatien" placeholder="Giá tiền"><br>
+        <button type="submit">Cập nhật sản phẩm</button>
+    </form>
+    <script type="text/javascript" src="./edit.js"></script>
+</body>
+</html>

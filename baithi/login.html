@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post" onsubmit="login()">
+        <input type="text" name="uname" placeholder="Tên đăng nhập"><br>
+        <input type="password" name="password" placeholder="Mật khẩu"><br>
+        <button type="submit">Đăng nhập</button>
+        <pre id="mess"></pre>
+    </form>
+    <script>
+        const login = async()=>{
+            event.preventDefault();
+            const uname = document.querySelector('input[name="uname"]').value; // Lấy giá trị của ô input uname
+            const pass = document.querySelector('input[name="password"]').value; // Lấy giá trị của ô input passwords
+            // console.log(uname, pass);
+            // Kiểm tra user và pass có tồn tại trong data không
+            const ktra = await checkUser(uname,pass);
+            const mess = document.getElementById("mess");
+            if (ktra){
+                mess.innerHTML="Đăng nhập thành công";
+                localStorage.setItem("login","true");
+            }
+            else {
+                mess.innerHTML="Sai tên đăng nhập hoặc mật khẩu";
+            }
+           
+        }
+        const checkUser = async (username,pass)=>{
+             // Sử dụng fetch phương thức get để lấy.
+             const response = await fetch('http://localhost:3000/user');
+            const user = await response.json();
+            // Đầu tiên cho check = false
+            let check = false;
+            // duyệt mảng user
+            user.map((value,index)=>{
+                if ((value.uname==username)&&(value.pass==pass)){
+                    check= true;
+                    // break;
+                }
+            });
+            return check;
+        }
+    </script>
+</body>
+</html>

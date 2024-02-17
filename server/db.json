@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "name": "Sản phẩm abcd",
+      "image": "https://trangtrinhaviet.vn/wp-content/uploads/2016/12/dong-ho-treo-tuong-dt003-11-570x428.jpg",
+      "cat_id": "2",
+      "price": "10000",
+      "id": "9b83"
+    },
+    {
+      "id": "dd9b",
+      "name": "sdfsdfds",
+      "image": "",
+      "cat_id": "1",
+      "price": "34234"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "uname": "admin",
+      "pass": "123456"
+    }
+  ]
+}
