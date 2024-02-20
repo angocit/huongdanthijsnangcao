@@ -32,17 +32,20 @@
         }
         const checkUser = async (username,pass)=>{
              // Sử dụng fetch phương thức get để lấy.
-             const response = await fetch('http://localhost:3000/user');
+            const response = await fetch('http://localhost:3000/user?uname='+username);
             const user = await response.json();
             // Đầu tiên cho check = false
             let check = false;
             // duyệt mảng user
-            user.map((value,index)=>{
-                if ((value.uname==username)&&(value.pass==pass)){
-                    check= true;
-                    // break;
-                }
-            });
+            if (user[0].pass==pass){
+                check = true;
+            }
+            // user.map((value,index)=>{
+            //     if ((value.uname==username)&&(value.pass==pass)){
+            //         check= true;
+            //         // break;
+            //     }
+            // });
             return check;
         }
     </script>
